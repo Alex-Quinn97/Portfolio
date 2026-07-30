@@ -1,0 +1,200 @@
+@import "tailwindcss";
+@layer properties;
+@layer theme, base, components, utilities;
+
+@theme {
+    /* Fonts */
+    --font-sans: 'Frama', ui-sans-serif, system-ui, sans-serif;
+    --font-frama-text: 'Frama Text', ui-sans-serif, system-ui, sans-serif;
+    --font-lastik: 'Lastik', ui-sans-serif, system-ui, sans-serif;
+    
+    /* Colors */
+    --color-brand-cream: #fff9ee;
+    --color-brand-scarlet: #ff2013;
+}
+
+.project-header{
+  @apply text-5xl font-lastik text-brand-scarlet;
+}
+
+/* Container hides horizontal overflow */
+.marquee{
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0;
+    --gap: 1rem;
+
+}
+.marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: var(--gap);
+    user-select: none;
+    animation: scroll-x var(--duration) linear infinite;
+
+    /* Declarations for animation */
+    --duration: 60s;
+    --scroll-start: 0;
+    --scroll-end: calc(-100% - var(--gap));
+}
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation-play-state: paused;
+  }
+}
+
+/* Font Faces */
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-Extralight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-ExtralightItalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-RegularItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-MediumItalic.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama';
+  src: url('/fonts/Frama/PPFrama-BlackItalic.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama Text';
+  src: url('/fonts/Frama/PPFramaText-Light.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama Text';
+  src: url('/fonts/Frama/PPFramaText-Lightitalic.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama Text';
+  src: url('/fonts/Frama/PPFramaText-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama Text';
+  src: url('/fonts/Frama/PPFramaText-Regularitalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama Text';
+  src: url('/fonts/Frama/PPFramaText-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frama Text';
+  src: url('/fonts/Frama/PPFramaText-Bolditalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lastik';
+  src: url('/fonts/Lastik/Lastik-Regular.woff') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lastik';
+  src: url('/fonts/Lastik/Lastik-Regularitalic.woff') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/*body {
+  border: 10px solid red !important; /* This tests to see if the compiler is reading the input file */
