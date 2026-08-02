@@ -9,14 +9,31 @@
     --font-lastik: 'Lastik', ui-sans-serif, system-ui, sans-serif;
     
     /* Colors */
-    --color-brand-cream: #fff9ee;
-    --color-brand-scarlet: #ff2013;
+    --color-ghost: #F6F7F1;
+    --color-night: #202028;
+    --color-chartreuse: #202028;
+    --color-indigo: #40424F;
+
+    /* Padding */
+    --spacing: 4px;
 }
 
+/* Font standards */
 .project-header{
-  @apply text-5xl font-lastik text-brand-scarlet;
+  @apply text-5xl font-lastik text-night
+}
+.project-subheader{
+  @apply text-lg font-frama-text text-night
+}
+.body-copy{
+  @apply text-base font-frama-text text-night
 }
 
+
+/* Buttons */
+.btn-night-outline{
+  @apply bg-transparent text-night border border-night p-1.25 rounded-full
+}
 /* Container hides horizontal overflow */
 .marquee{
     display: flex;
@@ -53,6 +70,45 @@
     animation-play-state: paused;
   }
 }
+
+/* Horizontal Project Gallery */
+.gallery-pin-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* clips anything outside the viewport width */
+}
+.gallery-track {
+  display: flex;
+  align-items: center;
+  width: max-content; /* lets the track grow as wide as its content needs */
+}
+.gallery-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; /* prevents flex from squishing items to fit */
+}
+.gallery-item-images {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* space between the 5 images in one project group */
+}
+.gallery-item-images img {
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.gallery-item-images img {
+  flex-shrink: 0;
+  object-fit: cover;
+  height: auto;
+  width: 185px;
+}
+.gallery-item-images .img-focus {
+  width: 600px;
+}
+
+
+
+
 
 /* Font Faces */
 @font-face {
@@ -183,18 +239,12 @@
 }
 @font-face {
   font-family: 'Lastik';
-  src: url('/fonts/Lastik/Lastik-Regular.woff') format('woff2');
+  src: url('/fonts/Lastik/Lastik-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: 'Lastik';
-  src: url('/fonts/Lastik/Lastik-Regularitalic.woff') format('woff2');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
+
 
 /*body {
   border: 10px solid red !important; /* This tests to see if the compiler is reading the input file */
